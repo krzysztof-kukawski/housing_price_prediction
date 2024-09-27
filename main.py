@@ -9,7 +9,7 @@ path_to_data = os.path.join(cwd, "data", "housing_processed.csv")
 
 housing = pd.read_csv(path_to_data)
 housing.dropna(inplace=True)
-housing.drop(columns=['ocean_proximity', 'Unnamed: 0', 'NEAR BAY'],axis=0,  inplace= True)
+housing.drop(columns=['Unnamed: 0', 'NEAR BAY'],axis=0,  inplace= True)
 features = housing.drop(['median_house_value'], axis=1)
 target = housing['median_house_value']
 correlation = features.corrwith(target)
